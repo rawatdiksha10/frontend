@@ -24,7 +24,10 @@ function Login(props:any) {
        
       let user:any = await login(navigate, data);
 
+      console.log(user.role);
+
       if(user.role===Role.Admin){
+        console.log("inside admin");
         setCookie("sv", user.sessionId);
         navigate(RouterPath.EngineerList);
 
