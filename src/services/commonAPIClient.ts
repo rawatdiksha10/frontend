@@ -9,7 +9,8 @@ export async function httpGet(navigate: any, path: string) {
     await axios.get(url, 
     {
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Request-Private-Network': 'true'
         },
         withCredentials:true
     })
@@ -30,7 +31,8 @@ export async function httpGetUserSession(path: string) {
     await axios.get(url, 
     {
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Request-Private-Network': 'true'
         },
         withCredentials:true
     })
@@ -51,7 +53,8 @@ export async function httpPostWithBody(navigate: any, path: string, body: any) {
     await axios.post(url, body,
     {
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Request-Private-Network': 'true'
         },
         withCredentials:true
     })
@@ -72,7 +75,8 @@ export async function httpPost(navigate: any, path: string) {
     await axios.post(url,
     {
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Request-Private-Network': 'true'
         },
         withCredentials:true
     })
