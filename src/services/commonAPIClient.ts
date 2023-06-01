@@ -11,7 +11,7 @@ export async function httpGet(navigate: any, path: string) {
         headers: {
             // 'Content-Type': 'application/json',
             'Access-Control-Request-Private-Network': true,
-            'Access-Control-Allow-Origin':true,
+            'Access-Control-Allow-Origin':'*',
             'Access-Control-Allow-Private-Network':true
         },
         withCredentials:true
@@ -35,7 +35,7 @@ export async function httpGetUserSession(path: string) {
         headers: {
             // 'Content-Type': 'application/json',
             'Access-Control-Request-Private-Network': true,
-            'Access-Control-Allow-Origin':true,
+            'Access-Control-Allow-Origin':'*',
             'Access-Control-Allow-Private-Network':true
         },
         withCredentials:true
@@ -59,7 +59,7 @@ export async function httpPostWithBody(navigate: any, path: string, body: any) {
         headers: {
             // 'Content-Type': 'application/json',
             'Access-Control-Request-Private-Network': true,
-            'Access-Control-Allow-Origin':true,
+            'Access-Control-Allow-Origin':'*',
             'Access-Control-Allow-Private-Network':true
         },
         withCredentials:true
@@ -83,7 +83,7 @@ export async function httpPost(navigate: any, path: string) {
         headers: {
             // 'Content-Type': 'application/json',
             'Access-Control-Request-Private-Network': true,
-            'Access-Control-Allow-Origin':true,
+            'Access-Control-Allow-Origin':'*',
             'Access-Control-Allow-Private-Network':true
         },
         withCredentials:true

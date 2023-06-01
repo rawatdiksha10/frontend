@@ -15,12 +15,30 @@ import PasswordReset from "./components/passwordreset/passwordreset";
 function App(){
   const [loggedInUser, setLoggedInUser] = useState<any>(null);
 
+  const sessions = require('client-sessions');
+
+
   const location = useLocation();
   useEffect(() => {
+    // async function getLoggedInUser() {
+    //   const user:any = await getUserSession();
+    //   setLoggedInUser(user);
+    // }
+    // getLoggedInUser();
     async function getLoggedInUser() {
-      const user:any = await getUserSession();
-      setLoggedInUser(user);
+      // Make an asynchronous request to retrieve user session
+      const response = await fetch('/getUserSession', {
+        method: 'GET',
+        credentials: 'include', // Send cookies along with the request
+      });
+
+      // Check if the response was successful and retrieve the user data
+      if (response.ok) {
+        const user = await response.json();
+        setLoggedInUser(user);
+      }
     }
+
     getLoggedInUser();
   }, [location]);
 
